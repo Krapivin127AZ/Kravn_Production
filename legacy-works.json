@@ -1,0 +1,226 @@
+[
+  {
+    "type": "photo",
+    "src": "media/work-01.jpg",
+    "cover": "media/work-01.jpg",
+    "title": "WORK 01",
+    "category": "VISUAL",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-02.mp4",
+    "cover": "covers/work-02.jpg",
+    "title": "WORK 02",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-03.mp4",
+    "cover": "covers/work-03.jpg",
+    "title": "WORK 03",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-04.mp4",
+    "cover": "covers/work-04.jpg",
+    "title": "WORK 04",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-05.mp4",
+    "cover": "covers/work-05.jpg",
+    "title": "WORK 05",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-06.mp4",
+    "cover": "covers/work-06.jpg",
+    "title": "WORK 06",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-07.mp4",
+    "cover": "covers/work-07.jpg",
+    "title": "WORK 07",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-08.mp4",
+    "cover": "covers/work-08.jpg",
+    "title": "WORK 08",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-09.mp4",
+    "cover": "covers/work-09.jpg",
+    "title": "WORK 09",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-10.mp4",
+    "cover": "covers/work-10.jpg",
+    "title": "WORK 10",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-11.mp4",
+    "cover": "covers/work-11.jpg",
+    "title": "WORK 11",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-12.mp4",
+    "cover": "covers/work-12.jpg",
+    "title": "WORK 12",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-13.mp4",
+    "cover": "covers/work-13.jpg",
+    "title": "WORK 13",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-14.mp4",
+    "cover": "covers/work-14.jpg",
+    "title": "WORK 14",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-15.mp4",
+    "cover": "covers/work-15.jpg",
+    "title": "WORK 15",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-16.mp4",
+    "cover": "covers/work-16.jpg",
+    "title": "WORK 16",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-17.mp4",
+    "cover": "covers/work-17.jpg",
+    "title": "WORK 17",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-18.mp4",
+    "cover": "covers/work-18.jpg",
+    "title": "WORK 18",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-19.mp4",
+    "cover": "covers/work-19.jpg",
+    "title": "WORK 19",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-20.mp4",
+    "cover": "covers/work-20.jpg",
+    "title": "WORK 20",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-21.mp4",
+    "cover": "covers/work-21.jpg",
+    "title": "WORK 21",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-22.mp4",
+    "cover": "covers/work-22.jpg",
+    "title": "WORK 22",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-23.mp4",
+    "cover": "covers/work-23.jpg",
+    "title": "WORK 23",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-24.mp4",
+    "cover": "covers/work-24.jpg",
+    "title": "WORK 24",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-25.mp4",
+    "cover": "covers/work-25.jpg",
+    "title": "WORK 25",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-26.mp4",
+    "cover": "covers/work-26.jpg",
+    "title": "WORK 26",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-27.mp4",
+    "cover": "covers/work-27.jpg",
+    "title": "WORK 27",
+    "category": "AI VIDEO",
+    "date": "2026"
+  },
+  {
+    "type": "video",
+    "src": "media/work-28.mp4",
+    "cover": "covers/work-28.jpg",
+    "title": "WORK 28",
+    "category": "AI VIDEO",
+    "date": "2026"
+  }
+]
