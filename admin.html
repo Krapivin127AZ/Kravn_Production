@@ -1,4 +1,226 @@
-<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KRAVN ADMIN</title><style>
-:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#08090a;color:#f4f4f4;font:15px Manrope,Arial,sans-serif}main{max-width:1100px;margin:auto;padding:35px 22px}header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #333;padding-bottom:24px}h1{font-size:clamp(32px,6vw,66px);letter-spacing:-.06em}h2{font-size:24px}input,textarea,select,button{font:inherit;padding:12px;background:#171717;border:1px solid #555;color:white;border-radius:7px}input:not([type=checkbox]),textarea,select{width:100%}button{cursor:pointer}button:hover{background:#333}button:disabled{opacity:.4;cursor:wait}label{display:block;margin:12px 0;color:#bbb}label input,label textarea,label select{margin-top:6px}.panel{border:1px solid #333;padding:22px;margin:24px 0;border-radius:12px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}.work{border:1px solid #333;padding:15px;border-radius:10px}.work img{width:100%;height:180px;object-fit:cover;background:#222}.actions{display:flex;flex-wrap:wrap;gap:8px}.muted{color:#999}.hidden{display:none!important}#status{min-height:25px;color:#ddd;white-space:pre-wrap}.danger{border-color:#9d5555}</style></head><body><main><header><strong>KRAVN / ADMIN</strong><div><a href="/" style="color:white;margin-right:18px">На сайт</a><button id="logout" class="hidden">Вийти</button></div></header><h1>CONTROL THE FRAME.</h1><p class="muted">Закрита панель керування портфоліо</p><p id="status" role="status"></p>
-<section id="login" class="panel"><h2>Вхід</h2><form id="loginForm"><label>Email<input id="email" type="email" required autocomplete="email"></label><label>Пароль<input id="password" type="password" required autocomplete="current-password"></label><button>Увійти</button></form></section>
-<div id="dashboard" class="hidden"><section class="panel"><h2 id="formHeading">Додати роботу</h2><form id="workForm"><input type="hidden" id="editId"><div class="grid"><label>Назва<input id="title" required maxlength="120"></label><label>Категорія<select id="category"><option>AI VIDEO</option><option>COMMERCIAL</option><option>CINEMATIC</option><option>PRODUCT</option><option>VISUAL</option></select></label></div><label>Опис<textarea id="description" rows="3"></textarea></label><label>Медіафайл (MP4, WebM, JPG, PNG, WebP)<input type="file" id="media" accept="video/mp4,video/webm,image/jpeg,image/png,image/webp"></label><label>Обкладинка (необов'язково — з відео створиться автоматично)<input type="file" id="cover" accept="image/jpeg,image/png,image/webp"></label><label><input type="checkbox" id="pinned"> Закріпити</label><label><input type="checkbox" id="visible" checked> Показувати на сайті</label><button id="save">Зберегти роботу</button> <button type="button" id="reset">Очистити форму</button></form></section><section class="panel"><h2>Мої роботи</h2><div id="items" class="grid"></div></section></div></main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script src="config.js"></script><script src="admin.js"></script></body></html>
+
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KRAVN ADMIN</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #08090a;
+      color: #f4f4f4;
+      font: 15px Manrope, Arial, sans-serif;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 35px 22px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #333;
+      padding-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 66px);
+      letter-spacing: -.06em;
+    }
+
+    h2 { font-size: 24px; }
+
+    input, textarea, select, button {
+      font: inherit;
+      padding: 12px;
+      background: #171717;
+      border: 1px solid #555;
+      color: white;
+      border-radius: 7px;
+    }
+
+    input:not([type=checkbox]),
+    textarea, select {
+      width: 100%;
+    }
+
+    button { cursor: pointer; }
+    button:hover { background: #333; }
+    button:disabled {
+      opacity: .4;
+      cursor: wait;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0;
+      color: #bbb;
+    }
+
+    label input,
+    label textarea,
+    label select { margin-top: 6px; }
+
+    .panel {
+      border: 1px solid #333;
+      padding: 22px;
+      margin: 24px 0;
+      border-radius: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .work {
+      border: 1px solid #333;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .work img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #222;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .muted { color: #999; }
+    .hidden { display: none !important; }
+
+    #status {
+      min-height: 25px;
+      color: #ddd;
+      white-space: pre-wrap;
+    }
+
+    .danger { border-color: #9d5555; }
+  </style>
+</head>
+
+<body>
+<main>
+  <header>
+    <strong>KRAVN / ADMIN</strong>
+    <div>
+      <a href="./" style="color:white;margin-right:18px">
+        На сайт
+      </a>
+      <button id="logout" class="hidden">Вийти</button>
+    </div>
+  </header>
+
+  <h1>CONTROL THE FRAME.</h1>
+  <p class="muted">Закрита панель керування портфоліо</p>
+  <p id="status" role="status"></p>
+
+  <section id="login" class="panel">
+    <h2>Вхід</h2>
+    <form id="loginForm">
+      <label>
+        Email
+        <input id="email" type="email"
+          required autocomplete="email">
+      </label>
+
+      <label>
+        Пароль
+        <input id="password" type="password"
+          required autocomplete="current-password">
+      </label>
+
+      <button>Увійти</button>
+    </form>
+  </section>
+
+  <div id="dashboard" class="hidden">
+    <section class="panel">
+      <h2 id="formHeading">Додати роботу</h2>
+
+      <form id="workForm">
+        <input type="hidden" id="editId">
+
+        <div class="grid">
+          <label>
+            Назва
+            <input id="title" required maxlength="120">
+          </label>
+
+          <label>
+            Категорія
+            <select id="category">
+              <option>AI VIDEO</option>
+              <option>COMMERCIAL</option>
+              <option>CINEMATIC</option>
+              <option>PRODUCT</option>
+              <option>VISUAL</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Опис
+          <textarea id="description" rows="3"></textarea>
+        </label>
+
+        <label>
+          Медіафайл (MP4, WebM, JPG, PNG, WebP)
+          <input type="file" id="media"
+            accept="video/mp4,video/webm,image/jpeg,image/png,image/webp">
+        </label>
+
+        <label>
+          Обкладинка (необов'язково — з відео
+          створиться автоматично)
+          <input type="file" id="cover"
+            accept="image/jpeg,image/png,image/webp">
+        </label>
+
+        <label>
+          <input type="checkbox" id="pinned">
+          Закріпити
+        </label>
+
+        <label>
+          <input type="checkbox" id="visible" checked>
+          Показувати на сайті
+        </label>
+
+        <button id="save" type="submit">
+          Зберегти роботу
+        </button>
+
+        <button type="button" id="reset">
+          Очистити форму
+        </button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Мої роботи</h2>
+      <div id="items" class="grid"></div>
+    </section>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
